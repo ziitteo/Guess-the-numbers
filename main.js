@@ -13,12 +13,13 @@ let randomNumber = 0;
 let userInput = document.getElementById("user-input");
 let playButton = document.getElementById("play-button");
 let resetButton = document.getElementById("reset-button");
+let answerButton = document.getElementById("answer-button");
 let resultImage = document.querySelector(".result-image");
 let resultText = document.querySelector(".result-text");
 let resultAnswer = document.querySelector(".result-answer");
 
 let chanceArea = document.getElementById("chance-area");
-let chances = 5;
+let chances = 3;
 let gameOver = false;
 
 let history = [];
@@ -87,7 +88,7 @@ const reset = () => {
   // playButton 활성화
   playButton.disabled = false;
   // chance 초기화
-  chances = 5;
+  chances = 3;
   chanceArea.textContent = `남은 찬스 : ${chances}번`;
   // gameOver 초기화
   gameOver = false;
@@ -103,4 +104,7 @@ playButton.addEventListener("click", play);
 resetButton.addEventListener("click", reset);
 userInput.addEventListener("focus", () => {
   userInput.value = "";
+});
+answerButton.addEventListener("click", () => {
+  resultAnswer.textContent = `정답은 ${randomNumber} 입니다.`
 });
