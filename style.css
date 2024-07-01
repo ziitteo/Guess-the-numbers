@@ -1,0 +1,138 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Stylish", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.wrap {
+  margin: 0 auto;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: url();
+}
+
+.wrap .container {
+  padding: 50px 0;
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 146, 228, 0.262);
+  border-radius: 50px;
+}
+
+.wrap .container h1 {
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+
+.wrap .container #chance-area {
+  font-size: 27px;
+  margin-bottom: 20px;
+  border: none;
+}
+
+.wrap .container input:focus{
+  outline: none;
+}
+
+.wrap .container #user-input {
+  width: 50%;
+  height: 40px;
+  font-size: 30px;
+  border: 1px solid #ced4da;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.wrap .container .button-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.wrap .container .button-wrap button {
+  width: 100px;
+  height: 40px;
+  font-size: 20px;
+  border: none;
+  border-radius: 15px;
+  background-color: #ff85fb;
+  color: white;
+  cursor: pointer;
+}
+
+.wrap .container .button-wrap button:hover{
+  background-color: #ff00ff;
+
+}
+
+.wrap .container .button-wrap button:disabled {
+  background-color: #fed6ff;
+  cursor:default;
+}
+
+.wrap .container .button-wrap button:not(:last-child) {
+  margin-right: 20px;
+}
+
+.wrap .container #result-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.wrap .container #result-area .result-image {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  background: url(/assets/images/start.gif) no-repeat center center / cover; 
+}
+
+.wrap .container #result-area .result-text {
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+
+.wrap .container #result-area .result-answer {
+  font-size: 20px;
+}
+
+
+/* width 430px 이하일 때 */
+@media screen and (max-width: 430px) {
+  .wrap .container h1 {
+    font-size: 30px;
+  }
+
+  .wrap .container #user-input {
+    width: 70%;
+    height: 30px;
+    font-size: 15px;
+  }
+}
+
+/* width 430px 이상 630px 이하일 때 */
+@media screen and (min-width: 430px) and (max-width: 630px) {
+  .wrap .container h1 {
+    font-size: 40px;
+  }
+
+  .wrap .container #user-input {
+    width: 60%;
+    height: 35px;
+    font-size: 20px;
+  }
+}
