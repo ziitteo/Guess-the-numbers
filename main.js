@@ -11,25 +11,27 @@
 
 let computerNumber = 0;
 let playButton = document.getElementById("play-button");
-let useInput = document.getElementById("user-input");
+let userInput = document.getElementById("user-input");
 let resultArea = document.getElementById("result-area");
-
-playButton.addEventListener("click", play);
 
 const pickRandomNumber = () => {
   computerNumber = Math.floor(Math.random() * 100) + 1;
-  console.log("정답", computerNumber);
+  return computerNumber;
 }
 
 pickRandomNumber();
 
 const play = () => {
-  let userValue = useInput.value;
- if(userValue < computerNumber) {
-  resultArea.textContent =  "UP!!!"
- } else if(userValue > computerNumber) {
-  resultArea.textContent = "DOWN!!!"
- }  else {
-  resultArea.textContent = "맞춰버렸다!!!"
- } 
+  let userValue = userInput.value;
+
+  if (userValue < computerNumber) {
+    resultArea.textContent = "UP!!!";
+  } else if (userValue > computerNumber) {
+    resultArea.textContent = "DOWN!!!";
+  } else {
+    resultArea.textContent = "맞춰버렸다!!!";
+  }
 }
+
+playButton.addEventListener("click", play);
+
