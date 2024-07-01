@@ -82,6 +82,8 @@ const reset = () => {
   resultImage.style.backgroundImage = "url(/assets/images/start.gif)";
   // result Text 초기화
   resultText.textContent = "숫자를 맞춰보세요!"
+  //result Answer 초기화
+  resultAnswer.textContent = "";
   // playButton 활성화
   playButton.disabled = false;
   // chance 초기화
