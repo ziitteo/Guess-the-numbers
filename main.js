@@ -50,13 +50,20 @@ const play = () => {
   chanceArea.textContent = `남은 찬스 : ${chances}번`;
 
   if (chances < 1) {
-    gameOver = true;
+    if (userNumber === randomNumber) {
+      resultImage.style.backgroundImage = "url(/assets/images/clap.gif)";
+      resultText.textContent = "맞춰버렸습니다~";
+      gameOver = true;
+    } else {
+      resultImage.style.backgroundImage = "url(/assets/images/gameover.gif)"
+      resultText.textContent = "게임오버!! 마셔라~ 마셔라~ 마셔라~"
+      resultAnswer.textContent = `정답은 ${randomNumber} 입니다.`
+      gameOver = true;
+    }
+
   }
 
   if (gameOver) {
-    resultImage.style.backgroundImage = "url(/assets/images/gameover.gif)"
-    resultText.textContent = "게임오버!! 마셔라~ 마셔라~ 마셔라~"
-    resultAnswer.textContent = `정답은 ${randomNumber} 입니다.`
     playButton.disabled = true;
     return;
   }
